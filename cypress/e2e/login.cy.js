@@ -14,7 +14,7 @@ describe("Register form", () => {
         cy.dataTest('senha-input').type('123456')
         cy.dataTest('botao-enviar').click()
         cy.location('pathname').should('eq', '/home')
-        cy.contains('p', 'Olá Neilton Seguins')
+        cy.contains('p', 'Olá Neilton Seguins').should('be.visible')
     })
 
     it("Não deve permitir um email inválido", () => {
