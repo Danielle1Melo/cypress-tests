@@ -27,3 +27,10 @@
 Cypress.Commands.add('dataTest', (selector) => {
     return cy.get(`[data-test=${selector}]`)
 })
+
+Cypress.Commands.add('login', (email, senha) => {
+    cy.dataTest('botao-login').click()
+    cy.dataTest('email-input').type(`${email}`)
+    cy.dataTest('senha-input').type(`${senha}`)
+    cy.dataTest('botao-enviar').click()
+})
